@@ -1,0 +1,38 @@
+{
+    "plasma": {
+        "density": "0.00001",
+        "density_unit": "g/cm3",
+        "percent_type": "ao",
+        "elements": {"H":1}
+    },
+    "flibe": {
+        "chemical_equation": "BeLi2F4",
+        "density": 1.94,
+        "density_unit":"g/cm3",
+        "comment": "Based on chemical formula",
+        "percent_type": "ao",
+        "enrichment_target":"Li6",
+        "enrichment_type":"ao"
+    },
+    "uf4": {
+        "chemical_equation": "UF4",
+        "density": 6.7,
+        "density_unit":"g/cm3",
+        "comment": "Based on chemical formula",
+        "percent_type": "ao",
+        "enrichment_target":"U235",
+        "enrichment_type":"ao"
+    },
+    "tungsten": {
+        "density": 19.3,
+        "density_unit":"g/cm3",
+        "percent_type": "ao",
+        "elements": {"W":1}
+    },
+    "lead": {
+        "density": 11.3,
+        "density_unit":"g/cm3",
+        "percent_type": "ao",
+        "elements": {"Pb":1}
+    }
+}

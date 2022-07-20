@@ -1,4 +1,6 @@
 import paramak
+import numpy as np
+import json
 
 ###
 # The geometry herein setup is modeled after the A. Kuang 2018 Fusion Engineering and Design paper on the ARC reactor
@@ -167,20 +169,27 @@ first_wall = paramak.BlanketFP(first_wall_thickness,
 
 arc_reactor = paramak.Reactor(shapes_and_components = [plasma, vv, ob_cooling_channel, ob_multiplier, ob_outer_vv, ob_tank, ib_cooling_channel, ib_multiplier, ib_outer_vv, ib_tank])
 
-
-def get_volume(name):
-    for part in arc_reactor.shapes_and_components:
-        if name == part.name:
-            return part.volume()
-
-
 if __name__ == '__main__':
     #arc_reactor.export_html_3d('arc_reactor.html')
     #arc_reactor.export_html('arc_reactor_2d.html')
 
-    #print("inboard volume:", blanket_inboard.volume())
-    #print("outboard volume:", blanket_outboard.volume())
-    #print("total volume:", (blanket_inboard.volume() + blanket_outboard.volume())*1e-6)
+    # Theres gotta be a better way to do this but I don't know it rn
+    volumes = {
+        plasma.name : plasma.volume(),
+        ib_cooling_channel.name : ib_cooling_channel.volume(),
+        ib_multiplier.name : ib_multiplier.volume(),
+        ib_outer_vv.name : ib_outer_vv.volume(),
+        ib_tank.name : ib_tank.volume(),
+        ob_cooling_channel.name : ob_cooling_channel.volume(),
+        ob_multiplier.name : ob_multiplier.volume(),
+        ob_outer_vv.name : ob_outer_vv.volume(),
+        ob_tank.name : ob_tank.volume(),
+        vv.name : vv.volume()
+    }
+
+    # Save the volume of each part to a JSON file for accessing later in OpenMC, useful for doing depletion calculations
+    with open("arc2018_volumes.json", "w") as outfile:
+        json.dump(volumes, outfile, indent=4)
 
     arc_reactor.export_dagmc_h5m(
         filename='arc2018.h5m',

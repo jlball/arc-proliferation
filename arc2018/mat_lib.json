@@ -34,5 +34,11 @@
         "density_unit":"g/cm3",
         "percent_type": "ao",
         "elements": {"Pb":1}
+    },
+    "beryllium": {
+        "density": 1.85,
+        "density_unit":"g/cm3",
+        "percent_type":"ao",
+        "elements": {"Be":1}
     }
 }

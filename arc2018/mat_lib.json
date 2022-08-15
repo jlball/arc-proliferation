@@ -23,6 +23,13 @@
         "enrichment_target":"U235",
         "enrichment_type":"ao"
     },
+    "thf4": {
+        "chemical_equation": "ThF4",
+        "density": 6.3,
+        "density_unit":"g/cm3",
+        "comment": "Based on chemical formula",
+        "percent_type": "ao"
+    },
     "tungsten": {
         "density": 19.3,
         "density_unit":"g/cm3",

@@ -28,6 +28,6 @@ For OpenMC, create a separate conda environment and install the latest version w
   ## Current Structure
 
   ## Arc 2018
-  This model is based on the 2015 paper by Sorbom et al. and the 2018 paper by Kuang et al.
+  This model is based on the 2015 paper by Sorbom et al. and the 2018 paper by Kuang et al. It matches the specified radial build of this design very closely except for one notable exception - the thickness of the beryllium neutron multiplication layer, which is 2 cm instead of 1. This is due to a bug in paramak at the moment which means it doesn't correctly mesh layers 1 cm thick.
 
 

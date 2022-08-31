@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-U_data = np.load("U_data.npy")
-Th_data = np.load("Th_data.npy")
+U_data = np.load("U_depletion_data.npy")
+Th_data = np.load("Th_depletion_data.npy")
 
 percents_fertile = U_data[0] 
 fig, ax = plt.subplots()
